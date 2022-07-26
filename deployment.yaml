@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
       - name: app
-        image: paulbouwer/hello-kubernetes:1.8
+        image: megatestacr.azurecr.io/webnginx
         ports:
-          - containerPort: 8080
+          - containerPort: 80
