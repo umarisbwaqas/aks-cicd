@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: megatestacr.azurecr.io/webnginx:v14
+        image: megatestacr.azurecr.io/webnginx
         
         ports:
           - containerPort: 80
