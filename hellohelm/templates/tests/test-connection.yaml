@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ include "helloheml.fullname" . }}-test-connection"
+  name: "{{ include "hellohelm.fullname" . }}-test-connection"
   labels:
-    {{- include "helloheml.labels" . | nindent 4 }}
+    {{- include "hellohelm.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test
 spec:
@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "helloheml.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "hellohelm.fullname" . }}:{{ .Values.service.port }}']
   restartPolicy: Never

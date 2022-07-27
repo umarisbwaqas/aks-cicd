@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "helloheml.fullname" . }}
+  name: {{ include "hellohelm.fullname" . }}
   labels:
-    {{- include "helloheml.labels" . | nindent 4 }}
+    {{- include "hellohelm.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "helloheml.selectorLabels" . | nindent 4 }}
+    {{- include "hellohelm.selectorLabels" . | nindent 4 }}
