@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "hellohelm.fullname" . }}
+  name: {{ include "helloheml.fullname" . }}
   labels:
-    {{- include "hellohelm.labels" . | nindent 4 }}
+    {{- include "helloheml.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "hellohelm.selectorLabels" . | nindent 6 }}
+      {{- include "helloheml.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "hellohelm.selectorLabels" . | nindent 8 }}
+        {{- include "helloheml.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "hellohelm.serviceAccountName" . }}
+      serviceAccountName: {{ include "helloheml.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
